@@ -72,8 +72,9 @@ bool my_ping::create_socket() {
       printf("[ERROR] my_ping: Gethostbyname failed!\n");
       return false;
     }
-    dst_addr.sin_addr.s_addr = inet_addr(hostinfo->h_addr_list[0]);
-  } else
+    memcpy((char *)&dst_addr.sin_addr.s_addr, hostinfo->h_addr_list[0], hostinfo->h_length);
+  }
+  else
     dst_addr.sin_addr.s_addr = in_addr;
 
   ip_address = inet_ntoa(dst_addr.sin_addr);
@@ -209,7 +210,8 @@ bool my_ping::ping(int times) {
   if (recv_num > 0) {
     timeout_num = send_num - recv_num;
     avg_time = total_time / recv_num;
-  } else {
+  }
+  else {
     timeout_num = send_num;
     avg_time = -1;
     return false;

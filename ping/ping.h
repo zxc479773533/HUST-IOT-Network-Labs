@@ -41,10 +41,9 @@ class my_ping {
   int send_num;
   int recv_num;
   // Time statistics
-  int min_time;
-  int avg_time;
-  int max_time;
-  int mdev_time;
+  double min_time;
+  double avg_time;
+  double max_time;
   double total_time;
   // Socket
   int sock_fd;
@@ -67,7 +66,5 @@ public:
   void statistics();
   ~my_ping();
 };
-
-
 
 #endif // !ZXCPYP_PING

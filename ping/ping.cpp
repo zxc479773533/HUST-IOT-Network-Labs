@@ -19,7 +19,6 @@ my_ping::my_ping(const char *target, int timeout) {
   min_time = 0;
   avg_time = 0;
   max_time = 0;
-  mdev_time = 0;
   total_time = 0;
   sock_fd = 0;
 }
@@ -173,11 +172,12 @@ int my_ping::unpack(char *buf, int len) {
 
 void my_ping::statistics() {
   printf("\n--------------- %s ping statistics ---------------\n", ip_address.c_str());
-  printf("%d packets transmitted, %d received , %%%d packet loss, time %.3fms\n", send_num,
+  printf("%d packets transmitted, %d received , %%%d packet loss, time %.1fms\n", send_num,
            recv_num, (send_num - recv_num) / send_num * 100, total_time);
-  close(sock_fd);
   timeout_num = send_num - recv_num;
   avg_time = total_time / recv_num;
+  printf("rtt min/avg/max = %.3f/%.3f/%.3f ms\n", min_time, avg_time, max_time);
+  close(sock_fd);
 }
 
 bool my_ping::ping(int times) {

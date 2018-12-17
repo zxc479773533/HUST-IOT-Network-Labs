@@ -64,7 +64,7 @@ implementation {
       if (btrpkt == NULL) {
 	return;
       }
-      btrpkt->nodeid = TOS_NODE_ID;
+      btrpkt->nodeid = NOID_ID_2;
       btrpkt->counter = counter + 1;
       if (call AMSend.send(AM_BROADCAST_ADDR, 
           &pkt, sizeof(BlinkToRadioMsg)) == SUCCESS) {
@@ -82,7 +82,8 @@ implementation {
   event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len){
     if (len == sizeof(BlinkToRadioMsg)) {
       BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*)payload;
-      setLeds(btrpkt->counter);
+      if (btrpkt->nodeid = NOID_ID_1)
+        setLeds(btrpkt->counter);
     }
     return msg;
   }

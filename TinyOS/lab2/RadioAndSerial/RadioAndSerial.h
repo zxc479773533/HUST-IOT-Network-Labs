@@ -6,12 +6,11 @@
  * Github: zxc479773533
  */
 
-#ifndef BLINKTORADIO_H
-#define BLINKTORADIO_H
+#ifndef RADIOANDSERIAL_H
+#define RADIOANDSERIAL_H
 
 enum {
-  AM_BLINKTORADIO = 6,
-  TIMER_PERIOD_MILLI = 250
+  AM_BLINKTORADIOMSG = 6,
 };
 
 typedef nx_struct BlinkToRadioMsg {

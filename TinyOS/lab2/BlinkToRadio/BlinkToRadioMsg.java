@@ -10,7 +10,7 @@ public class BlinkToRadioMsg extends net.tinyos.message.Message {
     public static final int DEFAULT_MESSAGE_SIZE = 4;
 
     /** The Active Message type associated with this message. */
-    public static final int AM_TYPE = -1;
+    public static final int AM_TYPE = 6;
 
     /** Create a new BlinkToRadioMsg of size 4. */
     public BlinkToRadioMsg() {

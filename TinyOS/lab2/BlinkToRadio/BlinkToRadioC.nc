@@ -5,7 +5,7 @@
  * 
  * Github: zxc479773533
  */
-
+ 
 #include <Timer.h>
 #include "BlinkToRadio.h"
 
@@ -83,6 +83,7 @@ implementation {
     if (len == sizeof(BlinkToRadioMsg)) {
       BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*)payload;
       setLeds(btrpkt->counter);
+      counter = btrpkt->counter;
     }
     return msg;
   }

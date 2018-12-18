@@ -24,7 +24,6 @@ public class BlinkToRadio implements MessageListener {
 
   public void sendPackets(int nodeid, int counter) {
     BlinkToRadioMsg payload = new BlinkToRadioMsg();
-
     try {
       payload.set_nodeid(nodeid);
       payload.set_counter(counter);
@@ -36,12 +35,13 @@ public class BlinkToRadio implements MessageListener {
   }
 
   public void messageReceived(int to, Message message) {
-    BlinkToRadioMsg msg = (BlinkToRadioMsg) message;
+    BlinkToRadioMsg msg = (BlinkToRadioMsg)message;
     System.out.println("\nReceived packet to: " + to + " nodeid: " + msg.get_nodeid() + " counter: " + msg.get_counter());
     System.out.println("Input the nodeid and counter(like 1  2): ");
     Scanner sc = new Scanner(System.in);
     int nodeid = sc.nextInt();
     int counter = sc.nextInt();
+    System.out.println("Sending to " + nodeid + " number is: " + counter);
     sendPackets(nodeid, counter);
   }
 

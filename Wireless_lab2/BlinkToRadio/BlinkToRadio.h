@@ -1,5 +1,5 @@
 /*
- * HUST-IOT-Network-Labs TinyOS::lab1::BlinkToRadio1
+ * HUST-IOT-Network-Labs Wireless::lab2::BlinkToRadio
  * 
  * Created by zxcpyp
  * 
@@ -10,10 +10,8 @@
 #define BLINKTORADIO_H
 
 enum {
-  AM_BLINKTORADIO = 6,
-  TIMER_PERIOD_MILLI = 1000,
-  NOID_ID_1 = 1,
-  NOID_ID_2 = 2
+  AM_BLINKTORADIOMSG = 6,
+  TIMER_PERIOD_MILLI = 1000
 };
 
 typedef nx_struct BlinkToRadioMsg {

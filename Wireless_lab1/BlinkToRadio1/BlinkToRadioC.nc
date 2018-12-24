@@ -1,11 +1,11 @@
 /*
- * HUST-IOT-Network-Labs TinyOS::lab2::BlinkToRadio
+ * HUST-IOT-Network-Labs Wireless::lab1::BlinkToRadio1
  * 
  * Created by zxcpyp
  * 
  * Github: zxc479773533
  */
- 
+
 #include <Timer.h>
 #include "BlinkToRadio.h"
 
@@ -64,7 +64,7 @@ implementation {
       if (btrpkt == NULL) {
 	return;
       }
-      btrpkt->nodeid = TOS_NODE_ID;
+      btrpkt->nodeid = NOID_ID_1;
       btrpkt->counter = counter;
       if (call AMSend.send(AM_BROADCAST_ADDR, 
           &pkt, sizeof(BlinkToRadioMsg)) == SUCCESS) {
@@ -82,8 +82,8 @@ implementation {
   event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len){
     if (len == sizeof(BlinkToRadioMsg)) {
       BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*)payload;
-      setLeds(btrpkt->counter);
-      counter = btrpkt->counter;
+      if (btrpkt->nodeid = NOID_ID_2)
+        setLeds(btrpkt->counter);
     }
     return msg;
   }

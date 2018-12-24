@@ -1,5 +1,5 @@
 /*
- * HUST-IOT-Network-Labs TinyOS::lab1::BlinkToRadio2
+ * HUST-IOT-Network-Labs Wireless::lab1::BlinkToRadio2
  * 
  * Created by zxcpyp
  * 

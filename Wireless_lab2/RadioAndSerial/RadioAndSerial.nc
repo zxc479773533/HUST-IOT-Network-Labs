@@ -1,5 +1,5 @@
 /*
- * HUST-IOT-Network-Labs TinyOS::lab2::ReadAndSerial
+ * HUST-IOT-Network-Labs Wireless::lab2::ReadAndSerial
  * 
  * Created by zxcpyp
  * 
